@@ -1,0 +1,25 @@
+{
+  "name": "antdesign-nextjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "antd": "^3.24.3",
+    "formik": "^2.0.3",
+    "next": "^9.1.2",
+    "prettier": "^1.18.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.1",
+    "typescript": "^3.6.4",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
