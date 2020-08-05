@@ -1,0 +1,25 @@
+# Use an official Python runtime as a parent image
+FROM python:3.7
+LABEL maintainer="contact@fabienlefrapper.me"
+
+# Set environment varibles
+ENV PYTHONUNBUFFERED 1
+ENV DJANGO_ENV dev
+
+COPY . .
+WORKDIR /code/
+
+# Install Poetry
+RUN pip install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install -n
+
+# Copy the current directory contents into the container at /code/
+COPY . .
+
+RUN python manage.py migrate
+RUN useradd wagtail
+RUN chown -R wagtail /code
+USER wagtail
+
+CMD python manage.py runserver 0.0.0.0:$PORT
